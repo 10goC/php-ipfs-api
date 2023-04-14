@@ -35,7 +35,7 @@ class IPFS {
 		$req = $this->curl("$protocol://$ip:$port/api/v0/add?stream-channels=true", $content);
 		$req = json_decode($req, TRUE);
 
-		return $req['Hash'];
+		return $req['Hash'] ?? null;
 	}
 
 	public function ls ($hash) {
